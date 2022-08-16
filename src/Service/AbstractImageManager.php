@@ -27,7 +27,7 @@ abstract class AbstractImageManager
 
     abstract protected function getEntityManager(): EntityManagerInterface;
 
-    abstract protected function getImageEntityClass(): object;
+    abstract protected function getImageEntityClass(): string;
 
     private function uploadToFilesystem(
         FilesystemUploaderInterface $filesystemUploader,
