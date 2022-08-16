@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Package\SymfonyImageSupport\Filesystem;
+namespace Xaduken\ImageSupport\Filesystem;
 
-use App\Package\SymfonyImageSupport\DTO\ImageInfo;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpKernel\Log\Logger;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Xaduken\ImageSupport\DTO\ImageInfo;
 
 class StandardFilesystemUploader implements FilesystemUploaderInterface
 {

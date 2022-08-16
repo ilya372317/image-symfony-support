@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Package\SymfonyImageSupport\Service;
+namespace Xaduken\ImageSupport\Service;
 
-use App\Package\SymfonyImageSupport\Database\DatabaseImageUploaderInterface;
-use App\Package\SymfonyImageSupport\DTO\ImageInfo;
-use App\Package\SymfonyImageSupport\EntityInterface\Imageable;
-use App\Package\SymfonyImageSupport\Factory\ImageManagerFactoryInterface;
-use App\Package\SymfonyImageSupport\Filesystem\FilesystemUploaderInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Xaduken\ImageSupport\Database\DatabaseImageUploaderInterface;
+use Xaduken\ImageSupport\DTO\ImageInfo;
+use Xaduken\ImageSupport\EntityInterface\Imageable;
+use Xaduken\ImageSupport\Factory\ImageManagerFactoryInterface;
+use Xaduken\ImageSupport\Filesystem\FilesystemUploaderInterface;
 
 abstract class AbstractImageManager
 {
@@ -27,6 +27,8 @@ abstract class AbstractImageManager
 
     abstract protected function getEntityManager(): EntityManagerInterface;
 
+    abstract protected function getImageEntityClass(): object;
+
     private function uploadToFilesystem(
         FilesystemUploaderInterface $filesystemUploader,
         UploadedFile $uploadedFile
@@ -38,7 +40,7 @@ abstract class AbstractImageManager
         DatabaseImageUploaderInterface $databaseImageUploader,
         ImageInfo $imageInfo
     ): Imageable {
-        return $databaseImageUploader->upload($imageInfo, $this->getRelatedClass());
+        return $databaseImageUploader->upload($imageInfo, $this->getRelatedClass(), $this->getImageEntityClass());
     }
 
 }

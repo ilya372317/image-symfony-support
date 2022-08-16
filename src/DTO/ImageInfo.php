@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Package\SymfonyImageSupport\DTO;
+namespace Xaduken\ImageSupport\DTO;
 
 class ImageInfo
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Package\SymfonyImageSupport\EntityInterface;
+namespace Xaduken\ImageSupport\EntityInterface;
 
 interface Imageable
 {

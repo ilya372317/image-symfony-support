@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Package\SymfonyImageSupport\Factory;
+namespace Xaduken\ImageSupport\Factory;
 
-use App\Package\SymfonyImageSupport\Database\DatabaseImageUploaderInterface;
-use App\Package\SymfonyImageSupport\Filesystem\FilesystemUploaderInterface;
+use Xaduken\ImageSupport\Database\DatabaseImageUploaderInterface;
+use Xaduken\ImageSupport\Filesystem\FilesystemUploaderInterface;
 
 interface ImageManagerFactoryInterface
 {

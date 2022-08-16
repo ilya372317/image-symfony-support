@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Package\SymfonyImageSupport\Database;
+namespace Xaduken\ImageSupport\Database;
 
-use App\Package\SymfonyImageSupport\DTO\ImageInfo;
-use App\Package\SymfonyImageSupport\EntityInterface\Imageable;
+use Xaduken\ImageSupport\DTO\ImageInfo;
+use Xaduken\ImageSupport\EntityInterface\Imageable;
 
 interface DatabaseImageUploaderInterface
 {
-    public function upload(ImageInfo $imageInfo, string $relatedEntity): Imageable;
+    public function upload(ImageInfo $imageInfo, string $relatedEntity, string $imageClass): Imageable;
 }

@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Package\SymfonyImageSupport\Database;
+namespace Xaduken\ImageSupport\Database;
 
-use App\Entity\Image;
-use App\Package\SymfonyImageSupport\DTO\ImageInfo;
-use App\Package\SymfonyImageSupport\EntityInterface\Imageable;
 use Doctrine\ORM\EntityManagerInterface;
+use Xaduken\ImageSupport\DTO\ImageInfo;
+use Xaduken\ImageSupport\EntityInterface\Imageable;
 
 class DatabaseImageUploader implements DatabaseImageUploaderInterface
 {
@@ -16,15 +15,15 @@ class DatabaseImageUploader implements DatabaseImageUploaderInterface
         $this->entityManager = $entityManager;
     }
 
-    public function upload(ImageInfo $imageInfo, string $relatedEntity): Imageable
+    public function upload(ImageInfo $imageInfo, string $relatedEntity, string $imageClass): Imageable
     {
-        $image = $this->getImageObject($imageInfo, $relatedEntity);
+        $image = $this->getImageObject($imageInfo, $relatedEntity, $imageClass);
         return $this->persistImageObject($image);
     }
 
-    private function getImageObject(ImageInfo $imageInfo, string $relatedEntity): Imageable
+    private function getImageObject(ImageInfo $imageInfo, string $relatedEntity, string $imageClass): Imageable
     {
-        $image = new Image();
+        $image = new $imageClass;
         $image->setFileName($imageInfo->getFilename());
         $image->setPath($imageInfo->getTargetPath());
         $image->setMimeType($imageInfo->getMimeType());

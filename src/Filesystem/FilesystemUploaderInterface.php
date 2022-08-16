@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Package\SymfonyImageSupport\Filesystem;
+namespace Xaduken\ImageSupport\Filesystem;
 
-use App\Package\SymfonyImageSupport\DTO\ImageInfo;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Xaduken\ImageSupport\DTO\ImageInfo;
 
 interface FilesystemUploaderInterface
 {
