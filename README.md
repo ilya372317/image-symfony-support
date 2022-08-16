@@ -11,7 +11,7 @@ database and store them to filesystem.
 
 ## Usage:
 
-Suppose you have entity User. This entity need have avatar, then you create
+Suppose you have to entity User. This entity need to have avatar. Then you create
 for example Image entity and make it implements Imageable interface.
 In this way you guarantee Image table in database will have needle
 columns.
@@ -145,7 +145,7 @@ columns.
         }
     }
 
-How you can see, Image entity impelemts Imageable interface.
+As you can see, Image entity impelemts Imageable interface.
 It`s required.
 
 After that you need to create UserImageManager and extend it by
@@ -258,11 +258,11 @@ and filesystem used one simple class!
     }
 
 We get UserImageManager via dependency injection 
-and use just one method for save image to database and filesystem 
+and use just one method for save image to database, filesystem 
 and manage his relations!
 
 But maybe you ask how UserImageManager class get $targetDirectory property?
-Very simple. just use symfony manually injection.
+It`s very simple. just use symfony manually injection.
 
 ### /config/services.yaml
     parameters:
@@ -274,15 +274,15 @@ Very simple. just use symfony manually injection.
             arguments:
                 $targetDir: '%user_image_directory%'
 
-And that's it! Now if you need save image related to User entity.
+And that's it! Now if you need to save image related to User entity.
 Just get UserEntityManager by dependency injection and save your image.
 
 ## Factories
-This is all cool, but that if you need resize image before save it 
+This is all cool, but that if you need to resize image before save it 
 to filesystem? All some another things? To answer this questions, 
 I use abstract factory pattern. 
 
-If you need define costume way for 
+If you need to define costume way for 
 this, create your own factory, implemented by ImageManagerFactoryInterface
 and push your implementation to UserImageManger.getImageManagerFactory()
 method.
@@ -315,15 +315,15 @@ define way, how persist Imageable entity to database. For simple
 persisting use DatabaseImageUploader class instance.
 
 
-We discuss how create implementation of DatabaseUploaderInterface later.
+We discuss how to create implementation of DatabaseUploaderInterface later.
 
 ### getFilesystemUploader()
 
 Should return class instance of implementation FilesystemUploaderInterface.
-You also should make implementation by self or use StandardFilesystemUploader 
+You also should to make implementation by self or use StandardFilesystemUploader 
 if you need simple save.
 
-Just like with DatabaseImageUploaderInterface we discuss how make 
+Just like with DatabaseImageUploaderInterface we discuss how to make 
 implementation later.
 
 ### DatabaseImageUploaderInterface

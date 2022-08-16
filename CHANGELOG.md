@@ -1,5 +1,10 @@
 # Changelog 
 
+## [1.0.2] - 16.08.2022
+
+### fixed 
+Grammar errors in README file
+
 ## [1.0.1] - 16.08.2022
 
 ### added
