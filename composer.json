@@ -1,7 +1,11 @@
 {
   "name": "xaduken/image-symfony-support",
   "description": "Component for make image management in symfony very easy",
-  "keywords": ["image", "symfony-image", "iamge-managment"],
+  "keywords": [
+    "image",
+    "symfony-image",
+    "iamge-managment"
+  ],
   "homepage": "https://github.com/ilya372317/image-symfony-support",
   "license": "MIT",
   "authors": [
